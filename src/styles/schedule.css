@@ -1,0 +1,163 @@
+
+.schedule {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 21.87rem;
+    height: auto;
+    gap: 0.75rem;
+}
+
+.schedule-period {
+    background-color: var(--bg-tertiary);
+    border-radius: 10px;
+}
+
+.schedule-period header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Joga um bloco para cada ponta */
+    padding: 0.75rem 1.25rem; 
+
+    border-bottom: 1px solid #2e2c30;
+}
+
+.title-group {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+
+    & img {
+        width: 1.25rem;
+    }
+    & strong {
+        font: var(--label-large);
+        color: var(--content-primary);
+    }
+}
+
+.schedule-period header span {
+    font: var(--label-large);
+    color: var(--content-secondary);
+}
+
+.schedule-period ul {
+    list-style: none;
+    padding: 1.25rem;
+
+}
+
+.schedule-period ul li {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: .75rem;
+
+    width: 100%;
+    max-width: 19.37rem;
+    min-height: 6rem;
+    height: auto;
+
+    & .schedule-info {
+        display: flex;
+        flex-wrap: wrap;
+
+        gap: .75rem; 
+
+        & .schedule-pet-tutor {
+            width: 100%;
+            max-width: 12.37rem;
+        }
+        & strong, h3 {
+            font: var(--label-medium);
+            color: var(--content-primary);
+        }
+
+        & div span {
+            font: var(--paragraph-medium);
+            color: var(--content-secondary);
+        }
+    }
+
+    & .remove-schedule {
+        appearance: none;
+        background-color: transparent;
+        border: none;
+
+        margin-left: auto;
+        font: var(--paragraph-small);
+        color: var(--content-tertiary);
+
+        &:hover {
+            font: var(--link);
+            color: var(--content-primary);
+            text-decoration: underline;
+        }
+        
+    }
+}
+
+
+.schedule-period ul li .remove-schedule:focus-visible {
+    outline: 1.5px solid var(--border-brand);
+    outline-offset: 3px;
+}
+
+
+.schedule-period ul li:not(:last-child) {
+    border-bottom: 0.6px solid #353339;
+}
+    
+
+
+
+@media (width >= 85em) {
+    .schedule {
+        max-width: 100%;
+    }
+
+    .schedule-period ul li {
+        max-width: 100%;
+        min-height: 3rem;
+        display: grid;
+        grid-template-columns: 1fr auto;
+        padding: 1rem;
+
+        align-items: center;
+        gap: 1rem;
+
+         
+       & .schedule-info {
+            display: flex;
+            width: 100%;
+            flex-wrap: nowrap;
+            gap: 1rem;
+    
+            & .schedule-pet-tutor {
+                max-width: 12.1875rem;
+            }
+    
+            .schedule-service {
+                width: 100%;
+            }
+        }
+    }
+}
+
+@media (width >= 48em) and (width < 85em) {
+    .schedule {
+        max-width: 100%;
+    }
+
+    .schedule-period ul li {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        align-items: center;
+        max-width: 100%;
+        gap: 1rem;
+    }
+}
+
+
+

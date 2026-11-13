@@ -1,0 +1,97 @@
+.button-schedule {
+    width: 100%;
+    max-width: 24.375rem;
+    min-height: 5.25rem;
+    height: auto;
+    margin-inline: auto;
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--bg-tertiary);
+}
+
+button {
+    cursor: pointer;
+}
+
+.btnSchedule {
+    appearance: none;
+    width: 100%;
+    max-width: 13.625rem;
+    height: 3rem;
+
+    background-color: var(--content-brand);
+    border-radius: 0.5rem;
+    /* border: 1px solid var(--content-brand); */
+    border: none;
+
+    filter: drop-shadow(
+        0 0 40px color-mix(in srgb, var(--content-brand) 30%, transparent)
+    );
+    
+    font: var(--label-large);
+    color: #050505;
+
+}
+
+.btnAgendar {
+    appearance: none;
+    width: 100%;
+    max-width: 7.687rem;
+    height: 3rem;
+    margin-left: auto;
+
+    background-color: var(--content-brand);
+    border-radius: 0.5rem;
+    /* border: 1px solid var(--content-brand); */
+    border: none;
+
+    font: var(--label-large);
+    color: #050505;
+
+    transition: background-color 300ms ease-in;
+}
+
+.btnAgendar:hover {
+    background-color: var(--bg-highlights);
+}
+
+
+
+.btnSchedule:focus-within, .button-schedule:focus-visible {
+    outline: 1.5px solid var(--content-brand);
+}
+
+.btnAgendar:focus-visible, .btnAgendar:focus-within {
+    outline: 1.5px solid var(--content-brand);
+}
+
+
+
+
+@media (width >= 85em) {
+    .button-schedule {
+        position: fixed;
+        right: 30px;
+        bottom: 33px;
+
+        width: 100%;
+        max-width: 218px;
+        min-height: 48px;
+
+        background-color: transparent;
+        border: none;
+
+    }
+}
+
+@media (width >= 48em) and (width < 85em) {
+    .button-schedule {
+        left: 50%;
+        transform: translateX(-50%);
+        width: calc(100% - 4rem);
+        max-width: 54.4375rem;
+    }
+}

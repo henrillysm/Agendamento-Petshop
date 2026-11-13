@@ -1,0 +1,193 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --content-primary: #FFFFFF;
+    --content-secondary: #98959D;
+    --content-tertiary: #666666;
+    --content-brand: #9282FA;
+
+    --bg-primary: #151515;
+    --bg-secondary: #1E1E1E;
+    --bg-tertiary: #23242C;
+    --bg-brand: #9282FA;
+    --bg-highlights: #BDB4FA;
+
+    --border-primary: #3e3c41;
+    --border-secondary: #86818C;
+    --border-brand: #9282FA;
+    --border-divisor: #353339;
+
+    --accent-blue: #027DF0;
+    --accent-blue-light: #16487A;
+    --accent-yellow: #F0DC02;
+    --accent-yellow-light: #756E1B;
+    --accent-orange: #F09102;
+    --accent-orange-light: #75501B;
+
+    --ff-inter-tight: "Inter Tight", sans-serif;
+    --ff-inter: "Inter", sans-serif;
+
+    --title: 700 1.5rem/2rem var(--ff-inter-tight);
+
+    --paragraph-medium: 500 0.875rem/1.5rem var(--ff-inter);
+    --paragraph-small: 500 0.75rem/1rem var(--ff-inter);
+    --label-large: 700 1rem/1.5rem var(--ff-inter);
+    --label-medium: 700 0.875rem/1.5rem var(--ff-inter);
+    --label-small: 700 0.75rem/1rem var(--ff-inter);
+    --link: 500 0.75rem/1rem var(--ff-inter);
+
+    --px-xl: 1.25rem;
+    --py-xl: 0.75rem;
+
+}
+
+
+::-webkit-scrollbar {
+  width: 0.3rem;
+}
+
+::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--content-brand);
+}
+
+::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+  background: url("../assets/arrow-down.svg") no-repeat;
+}
+
+body {
+    background-color: #14151D;
+    color: #f5f4f5;
+
+    padding-bottom: calc(5.25rem + 1rem);
+    
+}
+
+html {
+    font-family: var(--ff-inter);
+    font-size: 1rem;
+}
+
+.app-name {
+    width: 9.56rem;
+    height: 3rem;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 0.75rem 20px;
+    border-bottom-right-radius: 0.75rem;
+    
+    background-color: #2e2c30;
+
+
+    & a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 4px;
+        font: 700 1rem/1.5rem "Familjen Grotesk", sans-serif;
+        color: var(--content-brand);
+        text-decoration: none; 
+    }
+
+}
+
+main {
+    margin-top: 3.56rem;   
+}
+
+.container {
+    --max-width: 390px;
+    width: min(var(--max-width), 100% - var(--px-xl) * 2);
+    padding: var(--py-xl) 0;
+    margin-inline: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+h1 {
+    font: var(--title);
+}
+
+p {
+    font: var(--paragraph-medium);
+    color: var(--content-secondary);
+}
+
+.container > div:first-of-type {
+    display: flex;
+    flex-direction: column;
+    gap: .75rem;
+
+}
+
+
+@media (width >= 85em) {
+
+    body {
+        padding-bottom: 0;
+    }
+
+
+    main {
+        margin-top: 0px;
+    }
+    
+    .container {
+        --max-width: 54.4375rem;
+        --px-xl: 5rem;
+        padding: var(--px-xl);
+
+
+        /* Verficar se adiciona */
+        /* height: calc(100vh - 1.5rem); */
+    }
+
+    .container > div:first-of-type {
+        width: 100%;
+        height: auto;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: -18px;
+
+        & header {
+            width: 100%;
+        }
+
+    }
+
+    .date-initial label {
+        display: none;
+    }
+
+    .date-initial .input {
+        margin-block: auto;
+    }
+}
+
+@media (width >= 48em) and (width < 85em) {
+    .container {
+        --max-width: 54.4375rem;
+        --px-xl: 2rem;
+        width: min(var(--max-width), 100% - var(--px-xl) * 2);
+        padding: var(--px-xl) 0;
+    }
+
+    .container > div:first-of-type {
+        flex-direction: row;
+        align-items: flex-end;
+        justify-content: space-between;
+    }
+}
+

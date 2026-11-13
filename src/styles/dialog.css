@@ -1,0 +1,41 @@
+dialog::backdrop {
+  background: rgba(0, 0, 0, 0.01);
+  /* backdrop-filter: blur(6px); */
+}
+
+dialog {
+    margin: 4.75rem auto;
+
+    /* position: absolute; */
+    /* width: 390px; */
+    /* left: calc(50% - 390px/2); */
+    /* top: 0px; */
+}
+
+body:has(dialog[open]) main,
+body:has(dialog[open]) footer {
+  filter: blur(6px);
+  overflow: hidden;
+}
+
+body:has(dialog[open]) {
+  overflow: hidden;
+}
+
+body:has(dialog[open]) .button-schedule {
+  display: none;
+}
+
+
+@media (max-width: 30em) {
+  body:has(dialog[open]) main {
+    margin-top: 15.625rem;
+  }
+}
+
+@media (width >= 85rem) {
+  dialog {
+    margin: auto;
+  }
+}
+
