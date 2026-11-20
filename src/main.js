@@ -27,10 +27,6 @@ import "./modules/page-load.js"
 
 
 
-//para teste
-
-import "./modules/form/hours-load.js"
-
 
 
 
