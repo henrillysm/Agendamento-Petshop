@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- <link rel="stylesheet" href="./src/styles/index.css"> -->
+    <link rel="icon" href="./src/assets/Dog.svg" />
+    <link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:ital,wght@0,400..700;1,400..700&family=Inter+Tight:ital,wght@0,100..900;1,100..900&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+
+    <title>Sua agenda | Mundo Pet</title>
+  </head>
+
+  <body>
+    <header class="app-name logo">
+      <a href="/" aria-label="Mundo Pet - página inicial">
+        <img src="./src/assets/Dog.svg" alt="" class="">
+        <span>MUNDO PET</span>
+      </a>
+    </header>
+
+    <main class="container">
+      <div>
+        <header>
+          <h1>Sua agenda</h1>
+          <p>Aqui você pode ver todos os clientes e serviços agendados para hoje.</p>
+        </header>
+
+        <div class="text-field date-initial">
+          <label for="date" class="label">Data</label>
+          <div class="input">
+            <i><img src="./src/assets/Calendar-Minimalistic--Streamline-Solar.svg" alt="Calendário"></i>
+            <input type="date" id="date" name="data" required>
+          </div>
+        </div>
+      </div>
+
+      <div class="schedule">
+        <section aria-labelledby="manha" class="schedule-period">
+          <header>
+            <div class="title-group">
+              <img src="./src/assets/Sun-Fog--Streamline-Solar.svg" alt="Manhã">
+              <strong id="manha">Manhã</strong>
+            </div>
+            <span>09h–12h</span>
+          </header>
+
+          <ul id="period-morning" class="period">
+            <!-- <li>
+              <div class="schedule-info">
+                <strong>11:00</strong>
+                <div class="schedule-pet-tutor">
+                  <h3 class="pet-name">Thor <span class="tutor-name">/ Fernanda Costa</span></h3>
+                </div>
+                <p class="schedule-service">Vacinação</p>
+              </div>
+              <button type="button" class="remove-schedule" aria-label="Remover agendamento">Remover agendamento</button>
+            </li> -->
+          </ul>
+        </section>
+
+        <section aria-labelledby="tarde" class="schedule-period">
+          <header>
+            <div class="title-group">
+              <img src="./src/assets/Cloud-Sun-4--Streamline-Solar.svg" alt="Tarde">
+              <strong id="tarde">Tarde</strong>
+            </div>
+            <span>13h–18h</span>
+          </header>
+
+          <ul id="period-afternoon" class="period">
+            <!-- <li>
+              <div class="schedule-info">
+                <strong>14:00</strong>
+                <div class="schedule-pet-tutor">
+                  <h3>Thor <span>/ Fernanda Costa</span></h3>
+                </div>
+                <p class="schedule-service">Vacinação</p>
+              </div>
+              <button type="button" class="remove-schedule" aria-label="Remover agendamento">Remover agendamento</button>
+            </li> -->
+          </ul>
+        </section>
+
+        <section aria-labelledby="noite" class="schedule-period">
+          <header>
+            <div class="title-group">
+              <img src="./src/assets/Moon-Stars--Streamline-Solar.svg" alt="Noite">
+              <strong id="Noite">Noite</strong>
+            </div>
+            <span>19h–21h</span>
+          </header>
+
+          <ul id="period-night" class="period">
+            <!-- <li>
+              <div class="schedule-info">
+                <strong>19:00</strong>
+                <div class="schedule-pet-tutor">
+                  <h3>Thor <span>/ Fernanda Costa</span></h3>
+                </div>
+                <p class="schedule-service">Vacinação</p>
+              </div>
+              <button type="button" class="remove-schedule" aria-label="Remover agendamento">Remover agendamento</button>
+            </li> -->
+          </ul>
+        </section>
+      </div>
+    </main>
+
+    <dialog id="appointment-dialog">
+      <form class="form-modal" method="dialog">
+        <header>
+          <h1>Agende um atendimento</h1>
+          <p>Preencha os dados do cliente para realizar o agendamento:</p>
+        </header>
+
+        <div class="container-field">
+          <div class="text-field">
+            <label for="client" class="label">Nome do tutor</label>
+            <div class="input">
+              <img src="./src/assets/User--Streamline-Solar.svg" alt="Ícone do cliente">
+              <input type="text" id="client" name="client" required>
+            </div>
+          </div>
+
+          <div class="text-field">
+            <label for="name-pet" class="label">Nome do pet</label>
+            <div class="input">
+              <img src="./src/assets/Pet-Paw--Streamline-Core.svg" alt="Ícone do pet">
+              <input type="text" id="name-pet" name="name-pet" required>
+            </div>
+          </div>
+
+          <div class="text-field">
+            <label for="phone" class="label">Telefone</label>
+            <div class="input">
+              <img src="./src/assets/Phone--Streamline-Solar.svg" alt="Ícone de telefone">
+              <input type="tel" id="phone" name="phone" autocomplete="tel" placeholder="(88) 0 0000-0000">
+            </div>
+          </div>
+
+          <div class="text-field">
+            <label for="description" class="label">Descrição do serviço</label>
+            <div class="input description">
+              <textarea id="description" name="description" rows="3" required></textarea>
+            </div>
+          </div>
+
+          <div class="date-time">
+            <div class="text-field">
+              <label for="appointment-date" class="label">Data</label>
+              <div class="input">
+                <i><img src="./src/assets/Calendar-Minimalistic--Streamline-Solar.svg" alt="Calendário" /></i>
+                <input type="date" id="appointment-date" name="appointment-date" required />
+              </div>
+            </div>
+
+            <div class="text-field">
+              <label for="hours" class="label">Hora</label>
+              <div class="input">
+                <img src="./src/assets/Clock-Circle--Streamline-Solar.svg" alt="Hora"/>
+                <select name="hours" id="hours" class="select-hours" required>
+                  <option value="" disabled selected>Sel. hora</option>
+                  <!-- <option value="12:00">12:00</option> -->
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <button type="submit" class="btnAgendar">AGENDAR</button>
+        <button type="button" class="cancel-icon" aria-label="Fechar janela">
+          <img src="./src/assets/cancel-icon.svg" alt="">
+        </button>
+      </form>
+    </dialog>
+
+    <div class="button-schedule">
+      <button type="button" class="btnSchedule">NOVO AGENDAMENTO</button>
+    </div>
+
+    <!-- <script src="./src/main.js" type="module"></script> -->
+  </body>
+</html>
